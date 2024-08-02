@@ -23,9 +23,19 @@ const externalContracts = {
               name: "initialOwner",
               type: "address",
             },
+            {
+              internalType: "uint16",
+              name: "batchNumber",
+              type: "uint16",
+            },
           ],
           stateMutability: "nonpayable",
           type: "constructor",
+        },
+        {
+          inputs: [],
+          name: "AlreadyGraduated",
+          type: "error",
         },
         {
           inputs: [],
@@ -35,6 +45,11 @@ const externalContracts = {
         {
           inputs: [],
           name: "NotAContract",
+          type: "error",
+        },
+        {
+          inputs: [],
+          name: "NotCheckedIn",
           type: "error",
         },
         {
@@ -87,6 +102,19 @@ const externalContracts = {
           type: "event",
         },
         {
+          inputs: [],
+          name: "BATCH_NUMBER",
+          outputs: [
+            {
+              internalType: "uint16",
+              name: "",
+              type: "uint16",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
           inputs: [
             {
               internalType: "address",
@@ -107,6 +135,19 @@ const externalContracts = {
         },
         {
           inputs: [],
+          name: "batchGraduationNFT",
+          outputs: [
+            {
+              internalType: "contract BatchGraduationNFT",
+              name: "",
+              type: "address",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
           name: "checkIn",
           outputs: [],
           stateMutability: "nonpayable",
@@ -115,6 +156,32 @@ const externalContracts = {
         {
           inputs: [],
           name: "checkedInCounter",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "graduate",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "",
+              type: "address",
+            },
+          ],
+          name: "graduatedTokenId",
           outputs: [
             {
               internalType: "uint256",
