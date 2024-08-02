@@ -2,13 +2,17 @@
 pragma solidity >=0.8.0 <0.9.0;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
+import "./BatchGraduationNFT.sol";
 
 contract BatchRegistry is Ownable {
 
+    uint16 public immutable BATCH_NUMBER;
     uint256 constant CHECK_IN_REWARD = 0.01 ether;
+    BatchGraduationNFT public batchGraduationNFT;
 
     mapping(address => bool) public allowList;
     mapping(address => address) public yourContractAddress;
+    mapping(address => uint256) public graduatedTokenId;
     bool public isOpen = true;
     uint256 public checkedInCounter;
 
@@ -18,7 +22,8 @@ contract BatchRegistry is Ownable {
     error BatchNotOpen();
     error NotAContract();
     error NotInAllowList();
-
+    error AlreadyGraduated();
+    error NotCheckedIn();
 
     modifier batchIsOpen() {
         if (!isOpen) revert BatchNotOpen();
@@ -30,8 +35,10 @@ contract BatchRegistry is Ownable {
         _;
     }
 
-    constructor(address initialOwner) {
+    constructor(address initialOwner, uint16 batchNumber) {
         super.transferOwnership(initialOwner);
+        batchGraduationNFT = new BatchGraduationNFT(address(this));
+        BATCH_NUMBER = batchNumber;
     }
 
     function updateAllowList(address[] calldata builders, bool[] calldata statuses) public onlyOwner {
@@ -59,6 +66,14 @@ contract BatchRegistry is Ownable {
 
         yourContractAddress[tx.origin] = msg.sender;
         emit CheckedIn(wasFirstTime, tx.origin, msg.sender);
+    }
+
+    function graduate() public {
+        if (graduatedTokenId[msg.sender] != 0) revert AlreadyGraduated();
+        if (yourContractAddress[msg.sender] == address(0)) revert NotCheckedIn();
+         
+        uint256 newTokenId = batchGraduationNFT.mint(msg.sender);
+        graduatedTokenId[msg.sender] = newTokenId;
     }
 
     // Withdraw function for admins in case some builders don't end up checking in
