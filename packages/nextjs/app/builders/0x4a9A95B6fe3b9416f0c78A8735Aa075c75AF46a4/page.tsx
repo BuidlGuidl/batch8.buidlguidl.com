@@ -13,7 +13,7 @@ const RohanPersonalPage = () => {
           <div className="flex flex-col-reverse lg:flex-row items-center justify-center gap-x-[50px] md:mx-[550px]">
             <div className=" w-full">
               <h1 className=" text-[40px] font-bold md:my-[1rem]">Hey! I&apos;m Rohan👋🏼</h1>
-              <p className=" text-[14px] md:text-lg p-1 text-[#e7e5e5] font-semibold w-full text-justify mb-[6px]">
+              <p className=" text-[14px] md:text-lg p-1 font-semibold w-full text-justify mb-[6px]">
                 I started as a front-end developer, and I&apos;ve grown into someone who simply enjoys building
                 regardless of the tech stack or language. I enjoy solving complex problems and am eager to dive deeper
                 into the Web3 world.
@@ -24,11 +24,11 @@ const RohanPersonalPage = () => {
                   0x4a9A95B6fe3b9416f0c78A8735Aa075c75AF46a4
                 </p>
               </div>
-              <p className=" md:text-lg p-1 text-[#e7e5e5] text-[17px] w-full text-justify mt-1 mb-3">
+              <p className=" md:text-lg p-1 text-[17px] w-full text-justify mt-1 mb-3">
                 My{" "}
                 <a href="https://rohan06.vercel.app/">
                   {" "}
-                  <span className=" underline font-bold  hover:text-[#4290e9] text-[17px]">Portfolio</span>
+                  <span className=" underline font-bold  hover:text-accent  text-[17px]">Portfolio</span>
                 </a>
               </p>
 
@@ -37,7 +37,7 @@ const RohanPersonalPage = () => {
                   href={"https://github.com/rohan-ahire06"}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className=" hover:text-[#376faf] duration-300 ease-in-out text-[1.8rem]"
+                  className=" hover:text-accent duration-300 ease-in-out text-[1.8rem]"
                 >
                   <FaGithub />
                 </a>
@@ -45,13 +45,13 @@ const RohanPersonalPage = () => {
                   href={"https://github.com/rohan-ahire06"}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className=" hover:text-[#376faf] duration-300 ease-in-out text-[1.8rem]"
+                  className=" hover:text-accent duration-300 ease-in-out text-[1.8rem]"
                 >
                   <RiTwitterXFill />
                 </a>
                 <a
                   href="mailto:rohanahire006@gmail.com"
-                  className=" hover:text-[#376faf] duration-300 ease-in-out text-[1.8rem]"
+                  className=" hover:text-accent duration-300 ease-in-out text-[1.8rem]"
                 >
                   <SiGmail />
                 </a>
