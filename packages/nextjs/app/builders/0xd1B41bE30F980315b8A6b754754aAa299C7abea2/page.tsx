@@ -1,15 +1,18 @@
 import type { NextPage } from "next";
+import { Address } from "~~/components/scaffold-eth";
 
 const profileUrl = "https://pbs.twimg.com/media/Ey8oK6gXMAUKrEX.jpg";
 
 const RolandTheFrank: NextPage = () => {
   return (
     <div className="w-96 px-6 py-6  text-center bg-gray-800 rounded-lg lg:mt-0 xl:px-10">
-      <div className="space-y-4 xl:space-y-6">
+      <div className="space-y-4 xl:space-y-6 pt-8">
         <img className="mx-auto rounded-full h-36 w-36" src={profileUrl} alt="author avatar" />
         <div className="space-y-2">
           <div className="flex justify-center items-center flex-col space-y-3 text-lg font-medium leading-6">
-            <h3 className="text-white">Roland The Frank</h3>
+            <h3 className="text-amber-50">
+              <a href="https://en.wikipedia.org/wiki/Roland">Roland The Frank</a>
+            </h3>
             <p className="text-indigo-300">Software Engineer</p>
             <div className="flex justify-center mt-5 space-x-5">
               <a
@@ -72,13 +75,37 @@ const RolandTheFrank: NextPage = () => {
                   <path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path>
                 </svg>
               </a>
+              <a
+                href="https://www.youtube.com/@DevArcStudio"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block text-gray-400"
+              >
+                <span className="sr-only">YouTube</span>
+                <svg
+                  stroke="currentColor"
+                  fill="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 24 24"
+                  className="w-6 h-6 text-gray-400 hover:text-gray-100"
+                  height="1em"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M23.499 6.203a2.926 2.926 0 00-2.057-2.065C19.671 3.549 12 3.549 12 3.549s-7.671 0-9.442.589A2.926 2.926 0 00.501 6.203C0 8.022 0 12 0 12s0 3.978.501 5.797a2.926 2.926 0 002.057 2.065C4.329 20.451 12 20.451 12 20.451s7.671 0 9.442-.589a2.926 2.926 0 002.057-2.065C24 15.978 24 12 24 12s0-3.978-.501-5.797zM9.75 15.568V8.432L15.568 12l-5.818 3.568z"></path>
+                </svg>
+              </a>
             </div>
             <div className="pt-2">
               <hr className="w-48 h-1 mx-auto my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700" />
             </div>
+            <p className="text-amber-50">Have spare SepETH? Send it my way!</p>
+            <div className="bg-gray-400">
+              <Address address="0xd1B41bE30F980315b8A6b754754aAa299C7abea2" />
+            </div>
             <div>
-              <p className="text-white">Not a designer!</p>
-              <a className="text-orange-500" href="https://tailwindflex.com/@krishna/profile-card">
+              <p className="text-amber-50">Not a designer!</p>
+              <a className="text-indigo-300" href="https://tailwindflex.com/@krishna/profile-card">
                 Profile Source Code
               </a>
             </div>
