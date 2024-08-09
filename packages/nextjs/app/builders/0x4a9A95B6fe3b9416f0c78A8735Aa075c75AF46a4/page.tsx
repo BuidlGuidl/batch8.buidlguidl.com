@@ -4,6 +4,7 @@ import Image from "next/image";
 import { FaGithub } from "react-icons/fa";
 import { RiTwitterXFill } from "react-icons/ri";
 import { SiGmail } from "react-icons/si";
+import { Address } from "~~/components/scaffold-eth";
 
 const RohanPersonalPage = () => {
   return (
@@ -20,9 +21,9 @@ const RohanPersonalPage = () => {
               </p>
               <div className=" flex items-center gap-x-2 -my-3">
                 <p>Address :</p>{" "}
-                <p className="px-[5px] py-[1px] font-bold rounded-[8px] bg-[#ffff] text-black text-[14px]">
-                  0x4a9A95B6fe3b9416f0c78A8735Aa075c75AF46a4
-                </p>
+                <div className="bg-primary-content text-secondary px-3 py-2 rounded-[10px] my-3">
+                  <Address address="0x4a9A95B6fe3b9416f0c78A8735Aa075c75AF46a4" />
+                </div>
               </div>
               <p className=" md:text-lg p-1 text-[17px] w-full text-justify mt-1 mb-3">
                 My{" "}
