@@ -27,7 +27,7 @@ import { TbBrandReactNative } from "react-icons/tb";
 
 const currentYear = new Date().getFullYear();
 
-export const skills = [
+export const indraSkills = [
   {
     description: "A JavaScript library for building user interfaces",
     icon: SiReact,
@@ -174,4 +174,4 @@ export const skills = [
   },
 ] as const;
 
-export type SkillIcon = (typeof skills)[number]["icon"];
+export type IndraIconSkill = (typeof indraSkills)[number]["icon"];

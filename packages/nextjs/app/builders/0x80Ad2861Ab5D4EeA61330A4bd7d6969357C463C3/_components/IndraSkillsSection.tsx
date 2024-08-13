@@ -4,7 +4,7 @@ import {
   CardHoverEffect3,
   CardHoverEffect4,
 } from "~~/app/builders/0x80Ad2861Ab5D4EeA61330A4bd7d6969357C463C3/_components/CardHover";
-import { skills } from "~~/app/builders/0x80Ad2861Ab5D4EeA61330A4bd7d6969357C463C3/_data/skills";
+import { indraSkills } from "~~/app/builders/0x80Ad2861Ab5D4EeA61330A4bd7d6969357C463C3/_data/indra-skills";
 
 const IndraSkillsSection = (): React.ReactElement => {
   return (
@@ -12,7 +12,7 @@ const IndraSkillsSection = (): React.ReactElement => {
       <h2 className="text-2xl font-semibold mb-2">Skills</h2>
       <div className="flex min-h-0 flex-col gap-y-3">
         <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          {skills.map((skill, index) => (
+          {indraSkills.map((skill, index) => (
             <li key={skill.name}>
               {index % 4 === 0 ? (
                 <CardHoverEffect1

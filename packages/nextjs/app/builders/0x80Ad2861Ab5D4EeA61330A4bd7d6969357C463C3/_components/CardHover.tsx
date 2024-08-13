@@ -1,7 +1,7 @@
-import { type SkillIcon } from "~~/app/builders/0x80Ad2861Ab5D4EeA61330A4bd7d6969357C463C3/_data/skills";
+import { type IndraIconSkill } from "~~/app/builders/0x80Ad2861Ab5D4EeA61330A4bd7d6969357C463C3/_data/indra-skills";
 
 type CardProps = {
-  Icon: SkillIcon;
+  Icon: IndraIconSkill;
   name: string;
   description: string;
   time: string;
