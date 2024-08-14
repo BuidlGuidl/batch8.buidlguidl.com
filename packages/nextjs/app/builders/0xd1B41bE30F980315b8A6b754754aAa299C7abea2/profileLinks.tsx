@@ -17,7 +17,7 @@ export const GitHubIcon = (
   <svg
     stroke="currentColor"
     fill="currentColor"
-    stroke-width="0"
+    strokeWidth="0"
     viewBox="0 0 496 512"
     className="w-6 h-6 text-gray-400 hover:text-gray-100"
     height="1em"
@@ -32,7 +32,7 @@ export const LinkedInIcon = (
   <svg
     stroke="currentColor"
     fill="currentColor"
-    stroke-width="0"
+    strokeWidth="0"
     viewBox="0 0 448 512"
     className="w-6 h-6 text-gray-400 hover:text-gray-100"
     height="1em"
@@ -47,7 +47,7 @@ export const YouTubeIcon = (
   <svg
     stroke="currentColor"
     fill="currentColor"
-    stroke-width="0"
+    strokeWidth="0"
     viewBox="0 0 24 24"
     className="w-6 h-6 text-gray-400 hover:text-gray-100"
     height="1em"
