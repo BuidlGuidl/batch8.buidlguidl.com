@@ -1,6 +1,7 @@
 import React from "react";
-import MemberAddress from "./MemberAddress";
+import Link from "next/link";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import { Address } from "~~/components/scaffold-eth";
 import { useScaffoldEventHistory } from "~~/hooks/scaffold-eth";
 
 const MembersList = () => {
@@ -22,7 +23,13 @@ const MembersList = () => {
         </div>
       )}
       {MembersList?.map((member, i) => {
-        return <MemberAddress key={i} address={member.args.builder} />;
+        return (
+          <Link key={i} href={`/builders/${member?.args?.builder}`}>
+            <div className="bg-primary-content text-secondary px-3 py-2 rounded-[10px] my-3 shadow-xl">
+              <Address address={member?.args?.builder} />
+            </div>
+          </Link>
+        );
       })}
     </div>
   );
