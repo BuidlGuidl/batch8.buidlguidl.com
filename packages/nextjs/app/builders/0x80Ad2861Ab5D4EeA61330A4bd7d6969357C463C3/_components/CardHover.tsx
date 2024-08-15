@@ -9,7 +9,7 @@ type CardProps = {
 
 const CardContent = ({ Icon, description, name, time }: CardProps) => {
   return (
-    <div className="grid grid-rows-[auto_1fr_auto] gap-y-2 rounded-lg relative h-full w-full p-4 z-10">
+    <div className="grid grid-rows-[auto_1fr_auto] gap-y-2 rounded-lg relative h-full w-full py-6 px-8 z-10">
       <div className="flex items-center text-sm">
         <Icon className="h-5 w-5" />
         <h3 className="ml-2 text-lg font-semibold">{name}</h3>
@@ -24,7 +24,7 @@ const CardContent = ({ Icon, description, name, time }: CardProps) => {
 
 export const CardHoverEffect1 = (props: CardProps) => {
   return (
-    <div className="h-full w-full group relative inline-flex items-center justify-center overflow-hidden rounded-md bg-blue-500 px-6 font-medium">
+    <div className="h-full w-full group relative inline-flex items-center justify-center overflow-hidden rounded-md bg-blue-500  font-medium">
       <span className="absolute h-full w-full  bg-secondary  transition-all duration-300 group-hover:h-0 group-hover:w-0"></span>
       <CardContent {...props} />
     </div>
@@ -33,7 +33,7 @@ export const CardHoverEffect1 = (props: CardProps) => {
 
 export const CardHoverEffect2 = (props: CardProps) => {
   return (
-    <div className="group relative inline-flex h-full w-full items-center justify-center overflow-hidden rounded-md bg-secondary px-6 font-medium text-primary-content">
+    <div className="group relative inline-flex h-full w-full items-center justify-center overflow-hidden rounded-md bg-secondary  font-medium text-primary-content">
       <span className="absolute h-0 w-0 bg-blue-500 transition-all duration-300 group-hover:h-full group-hover:w-full"></span>
       <CardContent {...props} />
     </div>
