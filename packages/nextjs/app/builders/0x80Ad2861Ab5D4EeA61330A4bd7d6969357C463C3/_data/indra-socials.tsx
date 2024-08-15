@@ -48,3 +48,5 @@ export const indraSocials = [
 ] as const;
 
 export type IndraIconSocials = (typeof indraSocials)[number]["icon"];
+
+export const indraEthAddress = "0x80Ad2861Ab5D4EeA61330A4bd7d6969357C463C3";

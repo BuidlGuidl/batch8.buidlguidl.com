@@ -3,6 +3,7 @@ import IndraAboutMeSection from "~~/app/builders/0x80Ad2861Ab5D4EeA61330A4bd7d69
 import IndraSkillsSection from "~~/app/builders/0x80Ad2861Ab5D4EeA61330A4bd7d6969357C463C3/_components/IndraSkillsSection";
 import IndraSocialsSection from "~~/app/builders/0x80Ad2861Ab5D4EeA61330A4bd7d6969357C463C3/_components/IndraSocialsSection";
 import IndraSparkleName from "~~/app/builders/0x80Ad2861Ab5D4EeA61330A4bd7d6969357C463C3/_components/IndraSparkleName";
+import { indraEthAddress } from "~~/app/builders/0x80Ad2861Ab5D4EeA61330A4bd7d6969357C463C3/_data/indra-socials";
 import { Address } from "~~/components/scaffold-eth";
 
 const BuilderPage: React.FC = () => {
@@ -12,7 +13,7 @@ const BuilderPage: React.FC = () => {
         <h1>
           <IndraSparkleName />
         </h1>
-        <Address address="0x80Ad2861Ab5D4EeA61330A4bd7d6969357C463C3" format="short" />
+        <Address address={indraEthAddress} format="short" />
       </div>
 
       <IndraAboutMeSection />
