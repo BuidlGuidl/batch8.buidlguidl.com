@@ -1,7 +1,8 @@
 import React from "react";
 import Image from "next/image";
+import { NextPage } from "next"; 
 
-const Zeze = () => {
+const Zeze : NextPage = () => {
   return (
     <>
       <div className="basis-full md:basis-1/2 flex justify-center items-center h-screen">
