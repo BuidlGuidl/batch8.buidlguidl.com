@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-const page = () => {
+const Zeze = () => {
   return (
     <>
       <div className="basis-full md:basis-1/2 flex justify-center items-center h-screen">
@@ -51,4 +51,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Zeze
