@@ -81,6 +81,13 @@ module.exports = {
       },
       animation: {
         "pulse-fast": "pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+        sparkle: "sparkle 1.5s ease-in-out infinite",
+      },
+      keyframes: {
+        sparkle: {
+          "0%, 100%": { opacity: 0, transform: "scale(0) rotate(0deg)" },
+          "50%": { opacity: 1, transform: "scale(1) rotate(180deg)" },
+        },
       },
     },
   },
