@@ -1,32 +1,21 @@
-"use client";
-
 import React from "react";
 import MembersList from "./_components/MembersList";
-import { AiOutlineLoading3Quarters } from "react-icons/ai";
-import { useScaffoldReadContract } from "~~/hooks/scaffold-eth";
+import fs from "fs/promises";
+import path from "path";
 
-const BuildersPage = () => {
-  const { data: checkedInnBuilders, isLoading: loading } = useScaffoldReadContract({
-    contractName: "BatchRegistry",
-    functionName: "checkedInCounter",
-  });
+// Getting teh buildres dir. data
+const getBuildersData = async () => {
+  const buildersDirectory = path.join(process.cwd(), "/app/builders");
+  const builderFiles = await fs.readdir(buildersDirectory);
+  return builderFiles.filter(file => file !== "page.tsx").map(file => file.replace(".tsx", ""));
+};
+
+const BuildersPage = async () => {
+  const builders = await getBuildersData();
   return (
     <div className=" flex flex-col justify-center items-center md:my-20">
       <p className=" text-[22px] font-medium underline">🏰 The Builders 🏗️ of BuidlGuidl: Batch #8 </p>
-      <div className=" flex items-center gap-x-2 md:mb-8 mb-5 ">
-        <p className=" text-lg font-normal text-[25px]">Builders : </p>
-        <p className=" text-lg font-bold text-[24px]">
-          {loading ? (
-            <div className=" animate-spin text-lg">
-              <AiOutlineLoading3Quarters />
-            </div>
-          ) : (
-            checkedInnBuilders?.toString()
-          )}
-        </p>
-      </div>
-
-      <MembersList />
+      <MembersList builders={builders} />
     </div>
   );
 };
