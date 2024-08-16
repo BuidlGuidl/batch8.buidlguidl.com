@@ -4,7 +4,7 @@ import Image from "next/image";
 const page = () => {
   return (
     <>
-      <div className="flex flex-row min-h-full">
+      <div className="basis-full md:basis-1/2 flex justify-center items-center h-screen">
         <div className="basis-1/2 flex justify-center items-center h-screen">
           <Image src="/myPhoto.jpeg" alt="200px" width={500} height={500} className="rounded-3xl shadow-xl" />
         </div>
