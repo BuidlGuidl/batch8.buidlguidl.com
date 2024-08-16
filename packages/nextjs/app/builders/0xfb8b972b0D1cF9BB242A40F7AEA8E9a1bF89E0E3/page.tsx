@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-const zeze = () => {
+const page = () => {
   return (
     <>
       <div className="flex flex-row min-h-full">
@@ -51,4 +51,4 @@ const zeze = () => {
   );
 };
 
-export default zeze;
+export default page;
