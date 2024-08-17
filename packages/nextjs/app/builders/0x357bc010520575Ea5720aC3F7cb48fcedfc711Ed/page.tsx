@@ -1,4 +1,3 @@
-"use client";
 import { BriefcaseIcon, CodeBracketIcon } from '@heroicons/react/20/solid'
 import { NextPage } from 'next'
 import React from 'react'
