@@ -32,7 +32,7 @@ const MembersList = ({ builders }: { builders: string[] }) => {
 
   return (
     <>
-      <div className=" flex justify-center items-center md:gap-x-10">
+      <div className=" flex justify-center items-center md:gap-x-10 relative">
         <div className="flex items-center gap-x-2 md:mb-8 mb-5">
           <p className="text-lg font-normal text-[25px] underline">Buildes :</p>
           <p className="text-lg font-bold text-[24px]">
@@ -58,7 +58,13 @@ const MembersList = ({ builders }: { builders: string[] }) => {
           </p>
         </div>
       </div>
-
+      <div className=" absolute top-[400px]">
+        {!MembersList && (
+          <div className="animate-spin text-lg">
+            <AiOutlineLoading3Quarters />
+          </div>
+        )}
+      </div>
       <div className="md:mx-[200px] overflow-x-auto w-full flex justify-center items-center">
         <table className="w-full sm:w-[80%] lg:w-[50%] border border-black dark:border-gray-300 rounded-lg">
           <thead>
@@ -71,11 +77,7 @@ const MembersList = ({ builders }: { builders: string[] }) => {
               </th>
             </tr>
           </thead>
-          {!MembersList && (
-            <div className="animate-spin text-lg">
-              <AiOutlineLoading3Quarters />
-            </div>
-          )}
+
           <tbody>
             {MembersList?.map((member, i) => {
               const address = member?.args?.builder;
