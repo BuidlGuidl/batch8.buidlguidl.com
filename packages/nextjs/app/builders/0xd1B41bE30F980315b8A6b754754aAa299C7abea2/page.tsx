@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { GitHubIcon, LinkedInIcon, TwitterIcon, YouTubeIcon } from "./profileLinks";
 import type { NextPage } from "next";
 import { Address } from "~~/components/scaffold-eth";
@@ -9,7 +10,7 @@ const RolandTheFrank: NextPage = () => {
     <div className="flex items-center flex-col flex-grow pt-10">
       <div className="w-96 px-6 py-6  text-center bg-gray-800 rounded-lg lg:mt-0 xl:px-10">
         <div className="space-y-4 xl:space-y-6 pt-8">
-          <img className="mx-auto rounded-full h-36 w-36" src={profileUrl} alt="author avatar" />
+          <Image className="mx-auto rounded-full h-36 w-36" src={profileUrl} alt="author avatar" />
           <div className="space-y-2">
             <div className="flex justify-center items-center flex-col space-y-3 text-lg font-medium leading-6">
               <h3 className="text-amber-50">
