@@ -21,7 +21,7 @@ const CheckInCount = () => {
     } else {
       setResult(checkInLoading ? "..." : String(Number(checkedIn)));
     }
-  });
+  }, [checkInError, checkInLoading, checkedIn]);
 
   return (
     <>
