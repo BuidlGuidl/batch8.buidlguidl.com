@@ -1,14 +1,11 @@
-"use client";
-
 import Image from "next/image";
 import wavingRalphImage from "../0xBC428Bb80B1cc3C29164820528819Abf6b20cB88/images/simpsonsPhotos/ralph-transparent.png";
 import skillStack from "../0xBC428Bb80B1cc3C29164820528819Abf6b20cB88/images/skillStack.svg";
 import buidlGuidlLogo from "../0xBC428Bb80B1cc3C29164820528819Abf6b20cB88/images/socialMediaIcons/buidlguidlSmallLogo.png";
-import discordImage from "../0xBC428Bb80B1cc3C29164820528819Abf6b20cB88/images/socialMediaIcons/discord.png";
-import gmailIcon from "../0xBC428Bb80B1cc3C29164820528819Abf6b20cB88/images/socialMediaIcons/gmail.png";
-import instagramImage from "../0xBC428Bb80B1cc3C29164820528819Abf6b20cB88/images/socialMediaIcons/instagram.svg";
-import twitterImage from "../0xBC428Bb80B1cc3C29164820528819Abf6b20cB88/images/socialMediaIcons/twitter.png";
 import { IM_Fell_English_Sans, ImbueSans, ItalianaSans } from "./utils/font";
+import { CopyDiscordHandle, CopyMailId } from "./utils/onclickButtonComponents";
+import { FaInstagram } from "react-icons/fa";
+import { FaTwitter } from "react-icons/fa";
 import { Address } from "~~/components/scaffold-eth";
 
 const PersonalPage: React.FC = () => {
@@ -38,59 +35,29 @@ const PersonalPage: React.FC = () => {
                 Come Say Hi <span className="text-5xl">→</span>
               </div>
               <div className="flex flex-wrap gap-4 min-w-20 items-center">
-                <button
+                <a
                   className=" px-4 py-2 rounded-xl dark:hover:shadow-inner dark:hover:shadow-black hover:dark:bg-base-200 hover:bg-gray-100 transition-all hover:shadow-md shadow-black "
-                  onClick={() => {
-                    window.open(
-                      "https://app.buidlguidl.com/builders/0xBC428Bb80B1cc3C29164820528819Abf6b20cB88",
-                      "_blank",
-                    );
-                  }}
+                  href="https://app.buidlguidl.com/builders/0xBC428Bb80B1cc3C29164820528819Abf6b20cB88"
+                  target="_blank"
                 >
                   <Image width={8} height={8} unoptimized src={buidlGuidlLogo} alt="buidlguidl" className="w-8 h-8" />
-                </button>
-                <button
+                </a>
+                <a
                   className=" px-4 py-2 rounded-xl dark:hover:shadow-inner dark:hover:shadow-black hover:dark:bg-base-200 hover:bg-gray-100 transition-all hover:shadow-md"
-                  onClick={() => {
-                    window.open("https://x.com/ruhneb0_0", "_blank");
-                  }}
+                  href="https://x.com/ruhneb0_0"
+                  target="_blank"
                 >
-                  <Image width={8} height={8} unoptimized src={twitterImage} alt="twitter" className="w-8 h-8" />
-                </button>
-                <button
-                  className=" px-4 py-2 rounded-xl dark:hover:shadow-inner dark:hover:shadow-black hover:dark:bg-base-200  hover:bg-gray-100 ransition-all hover:shadow-md "
-                  onClick={() => {
-                    navigator.clipboard
-                      .writeText("benhurbenny007@gmail.com")
-                      .then(() => {
-                        alert("mail id copied!");
-                      })
-                      .catch(() => console.error);
-                  }}
-                >
-                  <Image width={8} height={8} unoptimized src={gmailIcon} alt="gmail" className="w-8  h-8" />
-                </button>
-                <button
+                  <FaTwitter className="h-8 w-8 fill-blue-400" />
+                </a>
+                <CopyMailId />
+                <CopyDiscordHandle />
+                <a
                   className=" px-4 py-2 rounded-xl dark:hover:shadow-inner dark:hover:shadow-black hover:dark:bg-base-200 hover:bg-gray-100 transition-all hover:shadow-md"
-                  onClick={() => {
-                    navigator.clipboard
-                      .writeText("benhur_05751")
-                      .then(() => {
-                        alert("username copied!");
-                      })
-                      .catch(() => console.error);
-                  }}
+                  href="https://www.instagram.com/_benhurbenny._/"
+                  target="_blank"
                 >
-                  <Image width={8} height={8} unoptimized src={discordImage} alt="twitter" className="w-10 h-8" />
-                </button>
-                <button
-                  className=" px-4 py-2 rounded-xl dark:hover:shadow-inner dark:hover:shadow-black hover:dark:bg-base-200 hover:bg-gray-100 transition-all hover:shadow-md"
-                  onClick={() => {
-                    window.open("https://www.instagram.com/_benhurbenny._/", "_blank");
-                  }}
-                >
-                  <Image width={8} height={8} src={instagramImage} alt="twitter" className="w-8 h-8" />
-                </button>
+                  <FaInstagram className="h-8 w-8 fill-red-400" />
+                </a>
               </div>
             </div>
             <div className="h-20 w-20 absolute bottom-8">
