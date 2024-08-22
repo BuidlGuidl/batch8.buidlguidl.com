@@ -24,11 +24,21 @@ const MembersList = ({ builders }: { builders: string[] }) => {
     receiptData: true,
   });
 
-  // Filtering the list to count the number of builders with a profile page.
-  const profileBuildersCount = MembersList?.filter(member => {
-    const address = member?.args?.builder;
-    return address && builders.includes(address);
-  }).length;
+  // Separating builders into those with and without a profile page.
+  const buildersWithProfile =
+    MembersList?.filter(member => {
+      const address = member?.args?.builder;
+      return address && builders.includes(address);
+    }) || [];
+
+  const buildersWithoutProfile =
+    MembersList?.filter(member => {
+      const address = member?.args?.builder;
+      return address && !builders.includes(address);
+    }) || [];
+
+  // Counting the number of builders with a profile page.
+  const profileBuildersCount = buildersWithProfile.length;
 
   return (
     <>
@@ -79,9 +89,9 @@ const MembersList = ({ builders }: { builders: string[] }) => {
           </thead>
 
           <tbody>
-            {MembersList?.map((member, i) => {
+            {/* Render builders with profile pages first */}
+            {buildersWithProfile.map((member, i) => {
               const address = member?.args?.builder;
-              const isFileSystemAddress = address ? builders.includes(address) : false;
               return (
                 <tr
                   key={i}
@@ -99,19 +109,40 @@ const MembersList = ({ builders }: { builders: string[] }) => {
                     </div>
                   </td>
                   <td className="px-8 py-2 sm:px-10 sm:py-4 text-center align-middle">
-                    {isFileSystemAddress ? (
-                      <Link
-                        href={`/builders/${address}`}
-                        className="text-blue-500 underline flex justify-center items-center font-semibold"
-                      >
-                        View Profile
-                        <div>
-                          <RiShareBoxLine className="text-lg text-gray-400 opacity-45" />
-                        </div>
-                      </Link>
-                    ) : (
-                      <span className="text-red-500 font-semibold">No Profile Page</span>
-                    )}
+                    <Link
+                      href={`/builders/${address}`}
+                      className="text-blue-500 underline flex justify-center items-center font-semibold"
+                    >
+                      View Profile
+                      <div>
+                        <RiShareBoxLine className="text-lg text-gray-400 opacity-45" />
+                      </div>
+                    </Link>
+                  </td>
+                </tr>
+              );
+            })}
+            {/* Render builders without profile pages */}
+            {buildersWithoutProfile.map((member, i) => {
+              const address = member?.args?.builder;
+              return (
+                <tr
+                  key={i + buildersWithProfile.length}
+                  className={
+                    i % 2 === 0
+                      ? "bg-primary border border-black dark:border-gray-300"
+                      : "bg-[#323f61] border border-black dark:border-gray-300 py-3"
+                  }
+                >
+                  <td className="px-8 py-2 sm:px-10 sm:py-4 text-center align-middle">
+                    <div className="flex justify-center items-center py-1 sm:py-2 text-black rounded-lg">
+                      <div className="bg-white px-3 py-2 rounded-lg">
+                        <Address address={address} />
+                      </div>
+                    </div>
+                  </td>
+                  <td className="px-8 py-2 sm:px-10 sm:py-4 text-center align-middle">
+                    <span className="text-red-500 font-semibold">No Profile Page</span>
                   </td>
                 </tr>
               );
