@@ -34,7 +34,7 @@ const MembersList = ({ builders }: { builders: string[] }) => {
     <>
       <div className=" flex justify-center items-center md:gap-x-10 relative">
         <div className="flex items-center gap-x-2 md:mb-8 mb-5">
-          <p className="text-lg font-normal text-[25px] underline">Buildes :</p>
+          <p className="text-lg font-normal text-[25px] underline">Builders:</p>
           <p className="text-lg font-bold text-[24px]">
             {loading ? (
               <div className="animate-spin text-lg">
@@ -46,7 +46,7 @@ const MembersList = ({ builders }: { builders: string[] }) => {
           </p>
         </div>
         <div className="flex items-center gap-x-2 md:mb-8 mb-5">
-          <p className="text-lg font-normal text-[25px] underline">Buildes pages created:</p>
+          <p className="text-lg font-normal text-[25px] underline">Builders pages created:</p>
           <p className="text-lg font-bold text-[24px]">
             {loading ? (
               <div className="animate-spin text-lg">

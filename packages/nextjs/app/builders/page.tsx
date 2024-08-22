@@ -3,7 +3,7 @@ import MembersList from "./_components/MembersList";
 import fs from "fs/promises";
 import path from "path";
 
-// Getting teh buildres dir. data
+// Getting the buildres dir. data
 const getBuildersData = async () => {
   const buildersDirectory = path.join(process.cwd(), "/app/builders");
   const builderFiles = await fs.readdir(buildersDirectory);
