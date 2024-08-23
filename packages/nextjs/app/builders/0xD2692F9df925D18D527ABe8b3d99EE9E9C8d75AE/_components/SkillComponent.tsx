@@ -1,5 +1,3 @@
-import React from "react";
-
 type SkillComponentProps = {
   icon: React.ReactNode;
   name: string;
