@@ -1,23 +1,19 @@
 import Image from "next/image";
-import SkillComponent from "./components/SkillComponent";
-import expressjsIcon from "./icons/ic_expressjs.svg";
-import javascriptIcon from "./icons/ic_javascript.svg";
-import mysqlIcon from "./icons/ic_mysql.svg";
-import nodeJSIcon from "./icons/ic_nodejs_o.svg";
-import reactIcon from "./icons/ic_react_o.svg";
-import tailwindCssIcon from "./icons/ic_tailwindcss.svg";
+import nightmareFoxImage from "./../../../public/builders/avatars/0xD2692F9df925D18D527ABe8b3d99EE9E9C8d75AE.jpg";
+import SkillComponent from "./_components/SkillComponent";
 import { NextPage } from "next";
+import { SiBootstrap, SiExpress, SiJavascript, SiNodedotjs, SiReact, SiTailwindcss } from "react-icons/si";
 import { Address } from "~~/components/scaffold-eth";
 
-export const NightmareFox: NextPage = () => {
+const NightmareFox: NextPage = () => {
   return (
-    <main className="w-full max-w-6xl mx-auto px-4 md:px-6 py-12 md:py-16">
+    <main className="w-full max-w-6xl mx-auto px-4 sm:px-8 py-12 md:py-16">
       <div className="grid md:grid-cols-2 gap-8 md:gap-12">
         <div className="flex flex-col items-center md:items-start gap-6">
           <div className="rounded-full w-40 h-40 md:w-56 md:h-56 overflow-hidden border-red-500 border-2">
             <Image
-              src="https://avatars.githubusercontent.com/u/112921490?v=4"
-              alt="NightmareFox Profile Picture"
+              src={nightmareFoxImage}
+              alt="NightmareFox Profile"
               width={160}
               height={160}
               className="w-full h-full object-cover"
@@ -42,13 +38,13 @@ export const NightmareFox: NextPage = () => {
           </div>
           <div className="space-y-4">
             <h2 className="text-2xl font-bold">Skills</h2>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-              <SkillComponent pathIcon={reactIcon} name="React" />
-              <SkillComponent pathIcon={nodeJSIcon} name="NodeJS" />
-              <SkillComponent pathIcon={javascriptIcon} name="JavaScript" />
-              <SkillComponent pathIcon={mysqlIcon} name="MySQL" />
-              <SkillComponent pathIcon={tailwindCssIcon} name="TailwindCSS" />
-              <SkillComponent pathIcon={expressjsIcon} name="ExpressJS" />
+            <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
+              <SkillComponent icon={<SiReact />} name="React" />
+              <SkillComponent icon={<SiNodedotjs />} name="NodeJS" />
+              <SkillComponent icon={<SiJavascript />} name="JavaScript" />
+              <SkillComponent icon={<SiBootstrap />} name="Bootstrap" />
+              <SkillComponent icon={<SiTailwindcss />} name="TailwindCSS" />
+              <SkillComponent icon={<SiExpress />} name="ExpressJS" />
             </div>
           </div>
         </div>
@@ -56,3 +52,5 @@ export const NightmareFox: NextPage = () => {
     </main>
   );
 };
+
+export default NightmareFox;
