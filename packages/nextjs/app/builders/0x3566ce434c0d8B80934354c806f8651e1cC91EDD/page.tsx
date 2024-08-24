@@ -21,17 +21,17 @@ const umutArray:NextPage = () => {
             <p className="py-6 text-xl">you are always welcome to reach out to me via my social accounts.</p>
 
             <a className="link link-primary" href="https://x.com/umutarray" target="_blank">
-              <button className="btn bg-pink-300">Twitter</button>
+              <button className="btn bg-pink-300 mx-2">Twitter</button>
             </a>
             <a className="link link-primary" href="https://github.com/umutarray" target="_blank">
-              <button className="btn bg-pink-300">Github</button>
+              <button className="btn bg-pink-300 mx-2">Github</button>
             </a>
             <a
               className="link link-primary"
               href="https://app.buidlguidl.com/builders/0x3566ce434c0d8B80934354c806f8651e1cC91EDD"
               target="_blank"
             >
-              <button className="btn bg-pink-300">BuidlGuidl</button>
+              <button className="btn bg-pink-300 mx-2">BuidlGuidl</button>
             </a>
           </div>
         </div>
