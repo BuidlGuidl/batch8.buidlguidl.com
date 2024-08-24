@@ -40,4 +40,4 @@ const umutArray:NextPage = () => {
   );
 };
 
-export default umutarray;
+export default umutArray;
