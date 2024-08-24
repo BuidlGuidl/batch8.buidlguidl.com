@@ -14,31 +14,33 @@ export const CheckInFlag = () => {
   };
   return (
     <div>
-      <dialog id="my_modal_1" className="modal">
+      <dialog id="my_modal_1" className="modal ">
         <div className="modal-box">
-          <h3 className={`font-bold text-lg ${isCheckedIn ? "" : "hidden"}`}>You have successfully checked in🎉</h3>
-          <h3 className={`font-bold text-lg ${isCheckedIn ? "hidden" : ""}`}>You have to yet check in 😌</h3>
+          <h3 className={`font-bold text-xl ${isCheckedIn ? "" : "hidden"}`}>You have successfully checked in🎉</h3>
+          <h3 className={`font-bold text-xl ${isCheckedIn ? "hidden" : ""}`}>You have to yet check in 😌</h3>
           <div className={` ${isCheckedIn ? "" : "hidden"}`}>
-            <p className="pt-4">You used the below contract to check in</p>
-            <p className="">{isCheckedIn}</p>
+            <p className="pt-4 mb-1">You used the below contract to check in</p>
+            <p className="m-0 font-semibold">{isCheckedIn}</p>
           </div>
 
           <div className={` ${isCheckedIn ? "hidden" : ""}`}>
-            <p className="py-4">Visit the github issue for the checkIn challenge</p>
+            <p className="text-lg">Visit the github issue for the checkIn challenge</p>
           </div>
 
-          <div className="modal-action">
-            <form method="dialog">
-              <button className="btn">Close</button>
+          <div className="modal-action mt-10">
+            <form method="dialog" className="w-full flex justify-between">
+              <button className="btn dark:bg-slate-500 dark:text-slate-800 dark:hover:text-slate-900 hover:text-slate-600 dark:hover:bg-slate-400 transition-all border-none text-slate-400">
+                Close
+              </button>
               <a
-                className={`btn mx-4 ${isCheckedIn ? "hidden" : ""}`}
+                className={`btn  ${isCheckedIn ? "hidden" : ""}`}
                 href="https://github.com/BuidlGuidl/batch8.buidlguidl.com/issues/10"
                 target="_blank"
               >
                 Onwards to checkIn <span className="text-lg">👩🏽‍✈️</span>
               </a>
               <a
-                className={`btn mx-4 ${isCheckedIn ? "" : "hidden"}`}
+                className={`btn ${isCheckedIn ? "" : "hidden"}`}
                 //Here the is checked provides the address of the deployed contract!!!
                 href={`https://optimistic.etherscan.io/address/${isCheckedIn}`}
                 target="_blank"
@@ -50,7 +52,7 @@ export const CheckInFlag = () => {
         </div>
       </dialog>
       <button
-        className={`${isCheckedIn ? "bg-green-600" : "bg-red-500 mr-3"} ${isConnected ? "" : "hidden"} px-3 py-2 sm:py-1.5 rounded-full shadow-xl font-semibold text-sm `}
+        className={`btn btn-sm border-none ${isCheckedIn ? "dark:bg-emerald-600 bg-emerald-400 dark:hover:bg-emerald-700 hover:bg-emerald-500" : "bg-red-500 dark:hover:bg-red-600"} ${isConnected ? "" : "hidden"} sm:py-1.5 rounded-full shadow-xl font-semibold text-sm transition-all`}
         onClick={() => openModal("my_modal_1")}
       >
         <span className="hidden sm:inline-block">{isCheckedIn ? "CheckedIn 🎉" : "CheckIn 🤔"}</span>

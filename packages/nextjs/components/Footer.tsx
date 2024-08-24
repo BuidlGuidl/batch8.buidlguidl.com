@@ -32,7 +32,7 @@ export const Footer = () => {
                 </div>
                 {/* Conditionally renders the batch member logo is they are in the allow list */}
                 <div className={`${isMember ? "" : "hidden"}`}>
-                  <BatchMemberLogo className="" />
+                  <BatchMemberLogo classNameWord="fill-current dark:text-white text-slate-700" className="" />
                 </div>
               </div>
             )}
