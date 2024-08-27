@@ -1,28 +1,23 @@
 import Image from "next/image";
 import { NextPage } from "next";
-import type { Metadata } from "next";
 import {
   AcademicCapIcon,
   CodeBracketIcon,
   RocketLaunchIcon,
-  StarIcon,
-  TrophyIcon,
-  XMarkIcon,
 } from "@heroicons/react/24/outline";
 import { BuidlGuidlLogo } from "~~/components/assets/BuidlGuidlLogo";
 import { Address } from "~~/components/scaffold-eth";
-import { getMetadata } from "~~/utils/scaffold-eth/getMetadata";
 
-const page: NextPage = () => {
+const Page: NextPage = () => {
   return (
     <>
-      <div className="w-full max-w-6xl mx-auto rounded-3xl shadow-2xl flex flex-row my-10 animate-gradient-x">
+      <div className="w-full max-w-6xl mx-auto shadow-2xl flex flex-col sm:flex-row my-10 animate-gradient-x">
         {/* image column */}
-        <div className="w-1/2 rounded-l-3xl bg-secondary">
+        <div className="w-full sm:w-1/2 bg-secondary">
           <div className="flex justify-center items-center h-full">
             <div className="w-80 h-80 overflow-hidden rounded-full shadow-lg">
               <Image
-                src="/builders/pena.jpeg"
+                src="/builders/avatars/pena.jpeg"
                 alt="Cleaner Avatar"
                 className="object-cover w-full h-full"
                 width={500}
@@ -33,7 +28,7 @@ const page: NextPage = () => {
         </div>
 
         {/* content column */}
-        <div className="w-1/2 bg-gradient-to-r from-secondary to-base-100 dark:from-secondary dark:to-base-300 rounded-r-3xl flex flex-col justify-center p-8">
+        <div className="w-full sm:w-1/2 bg-gradient-to-r from-secondary to-base-100 dark:from-secondary dark:to-base-300 flex flex-col justify-center p-8">
           <div className="flex justify-between items-center">
             <h1 className="text-5xl font-semibold">
               <span className="bg-clip-text text-black dark:text-white bg-gradient-to-r from-base-400 to-base-100 via-base-150 dark:from-secondary dark:via-secondary dark:to-secondary">
@@ -45,7 +40,6 @@ const page: NextPage = () => {
             </h1>
             <div className="flex gap-3">
               <a href="https://github.com/penaMaster" target="_blank" rel="noopener noreferrer">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
                   alt="GitHub"
@@ -60,14 +54,12 @@ const page: NextPage = () => {
                 <BuidlGuidlLogo className="h-8 w-8" />
               </a>
               <a href="https://t.me/penamasterr" target="_blank" rel="noopener noreferrer">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg"
                   alt="Telegram"
                   className="h-8 w-8"
                 />
               </a>
-              
             </div>
           </div>
           <div className="mt-4">
@@ -79,7 +71,6 @@ const page: NextPage = () => {
               <CodeBracketIcon className="h-8 w-8 text-green-500 dark:text-green-400 hover:scale-125 transition-transform duration-300" />
               <span>Full-stack + Smart Contract Developer</span>
             </p>
-            
             <p className="flex items-start gap-3 text-gray-900 dark:text-gray-200">
               <AcademicCapIcon className="h-8 w-8 text-purple-500 dark:text-purple-400 hover:scale-125 transition-transform duration-300" />
               <span>Learning Solidity</span>
@@ -91,4 +82,4 @@ const page: NextPage = () => {
   );
 };
 
-export default page;
+export default Page;
