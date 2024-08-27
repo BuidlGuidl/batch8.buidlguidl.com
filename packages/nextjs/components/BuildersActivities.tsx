@@ -25,7 +25,7 @@ const BuildersActivities = async () => {
         `;
 
           return (
-            <div key={githubUsername} className="card bg-base-100 shadow-xl p-4 w-56">
+            <div key={githubUsername} className="card bg-base-100 shadow-xl p-2 md:p-4 w-full md:w-56">
               <div className="card-body p-0">
                 <h2 className="card-title mb-2">
                   <Address address={builderActivity.address} format="short" />

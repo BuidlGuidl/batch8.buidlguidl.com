@@ -20,7 +20,7 @@ const Home: NextPage = () => {
 
         <div className="flex-grow bg-base-300 w-full mt-16 px-8 py-12 flex flex-col items-center justify-center space-y-8">
           <BuildersActivities />
-          <Link href="/builders" className="hover:underline">
+          <Link href="/builders" className="underline">
             View all builders
           </Link>
         </div>
