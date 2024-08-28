@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { NextPage } from "next";
 
-const umutArray:NextPage = () => {
+const umutArray: NextPage = () => {
   return (
     <>
       <div className="hero bg-base-200 min-h-screen">
