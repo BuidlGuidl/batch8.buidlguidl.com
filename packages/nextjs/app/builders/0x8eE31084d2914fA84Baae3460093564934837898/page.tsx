@@ -1,3 +1,5 @@
+/* eslint-disable */
+/* prettier-ignore */
 import Image from "next/image";
 import { NextPage } from "next";
 import {
