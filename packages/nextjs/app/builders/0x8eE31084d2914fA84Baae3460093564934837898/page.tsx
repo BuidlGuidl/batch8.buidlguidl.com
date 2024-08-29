@@ -1,12 +1,6 @@
-/* eslint-disable */
-/* prettier-ignore */
 import Image from "next/image";
 import { NextPage } from "next";
-import {
-  AcademicCapIcon,
-  CodeBracketIcon,
-  RocketLaunchIcon,
-} from "@heroicons/react/24/outline";
+import { AcademicCapIcon, CodeBracketIcon, RocketLaunchIcon } from "@heroicons/react/24/outline";
 import { BuidlGuidlLogo } from "~~/components/assets/BuidlGuidlLogo";
 import { Address } from "~~/components/scaffold-eth";
 
@@ -42,7 +36,7 @@ const Page: NextPage = () => {
             </h1>
             <div className="flex gap-3">
               <a href="https://github.com/penaMaster" target="_blank" rel="noopener noreferrer">
-                <img
+                <Image
                   src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
                   alt="GitHub"
                   className="h-8 w-8"
@@ -56,7 +50,7 @@ const Page: NextPage = () => {
                 <BuidlGuidlLogo className="h-8 w-8" />
               </a>
               <a href="https://t.me/penamasterr" target="_blank" rel="noopener noreferrer">
-                <img
+                <Image
                   src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg"
                   alt="Telegram"
                   className="h-8 w-8"
