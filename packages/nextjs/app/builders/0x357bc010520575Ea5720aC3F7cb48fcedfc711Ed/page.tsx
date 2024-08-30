@@ -4,18 +4,6 @@ import React from "react";
 import { NextPage } from "next";
 import { BriefcaseIcon, CodeBracketIcon } from "@heroicons/react/20/solid";
 
-const handleClick1 = () => {
-  window.open("https://github.com/Selpak99", "_blank", "noopener,noreferrer");
-};
-
-const handleClick2 = () => {
-  window.open(
-    "https://app.buidlguidl.com/builders/0x357bc010520575Ea5720aC3F7cb48fcedfc711Ed",
-    "_blank",
-    "noopener,noreferrer",
-  );
-};
-
 const Page: NextPage = () => {
   return (
     <>
@@ -46,20 +34,24 @@ const Page: NextPage = () => {
 
         <div className="flex-grow w-full mt-16">
           <div className="flex justify-center items-center gap-8 flex-col sm:flex-row">
-            <button
+            <a
               className="flex flex-col bg-base-100 px-6 py-6 text-center items-center max-w-xs rounded-3xl"
-              onClick={handleClick1}
+              href="https://github.com/Selpak99"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <CodeBracketIcon className="h-8 w-8 fill-secondary" />
               Github
-            </button>
-            <button
+            </a>
+            <a
               className="flex flex-col bg-base-100 px-6 py-6 text-center items-center max-w-xs rounded-3xl"
-              onClick={handleClick2}
+              href="https://app.buidlguidl.com/builders/0x357bc010520575Ea5720aC3F7cb48fcedfc711Ed"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <BriefcaseIcon className="h-8 w-8 fill-secondary" />
               Buidl Guidl
-            </button>
+            </a>
           </div>
         </div>
       </div>
