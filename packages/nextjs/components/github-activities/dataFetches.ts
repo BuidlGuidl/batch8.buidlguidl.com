@@ -1,19 +1,19 @@
 import { octokit } from "./octokit";
 import fs from "fs/promises";
 import path from "path";
-import { prCountQuery, repoIssueQuery, userQuery } from "~~/components/github-activities/github-queries";
+import { prCountQuery, repoIssueQuery, userQuery } from "~~/components/github-activities/githubQueries";
 import {
   BuilderData,
   BuilderDataMap,
   BuilderGitHubUsernameQueryResponse,
   QueryPRCountResponse,
   RepoIssueQueryResponse,
-} from "~~/components/github-activities/github-queries-types";
+} from "~~/components/github-activities/githubQueriesTypes";
 
 const OWNER = "BuidlGuidl";
 const REPO = "batch8.buidlguidl.com";
 
-// Get the builders directory data
+// Get the builders directory data from /app/builders
 export const getBuildersPages = async (): Promise<string[]> => {
   const buildersDirectory = path.join(process.cwd(), "/app/builders");
   const files = await fs.readdir(buildersDirectory);
@@ -21,7 +21,8 @@ export const getBuildersPages = async (): Promise<string[]> => {
   return addresses;
 };
 
-// Get GitHub username for a builder
+// Get GitHub username for a builder' wallet by looking at the initial commit
+// of their profile page under /app/builders/[address]/page.tsx
 export const getBuilderGitHubUsername = async (builderAddress: string): Promise<string | null> => {
   try {
     const result = await octokit.graphql<BuilderGitHubUsernameQueryResponse>(userQuery, {
@@ -37,7 +38,8 @@ export const getBuilderGitHubUsername = async (builderAddress: string): Promise<
   }
 };
 
-// Get PR data for all builders
+// Get PR data for all builders using the GitHub GraphQL API
+// The data includes the number of open, closed, and merged PRs
 export const getBuildersPRData = async (builderDataMap: BuilderDataMap): Promise<BuilderDataMap> => {
   const repoPRs = await octokit.graphql<QueryPRCountResponse>(prCountQuery, {
     owner: OWNER,
@@ -62,6 +64,10 @@ export const getBuildersPRData = async (builderDataMap: BuilderDataMap): Promise
   return newBuilderDataMap;
 };
 
+// Get issue activities for all builders using the GitHub GraphQL API
+// the activities include:
+// - commented issues
+// - reacted issues
 export const getBuildersIssueActivities = async (builderDataMap: BuilderDataMap): Promise<BuilderDataMap> => {
   const repoIssues = await octokit.graphql<RepoIssueQueryResponse>(repoIssueQuery, {
     owner: OWNER,
@@ -92,6 +98,8 @@ export const getBuildersIssueActivities = async (builderDataMap: BuilderDataMap)
   return newBuilderDataMap;
 };
 
+// Calculate the GitHub score for a builder based on the number of PRs and issues.
+// The numbers are weighted based on the importance of the activity.
 const githubScore = (builderData: BuilderData) => {
   const CLOSED_PR_WEIGHT = 1;
   const OPEN_PR_WEIGHT = 0.5;
@@ -110,6 +118,7 @@ const githubScore = (builderData: BuilderData) => {
   return prScore + issueScore;
 };
 
+// Calculate the GitHub score for all builders
 const getBuildersGitHubScore = (builderDataMap: BuilderDataMap): BuilderDataMap => {
   const newBuilderDataMap = new Map(builderDataMap);
 
@@ -122,6 +131,8 @@ const getBuildersGitHubScore = (builderDataMap: BuilderDataMap): BuilderDataMap 
 
   return newBuilderDataMap;
 };
+
+// Get all the builders' GitHub activities
 export const getBuildersGitHubActivities = async (): Promise<BuilderDataMap> => {
   const buildersAddresses = await getBuildersPages();
   const builderDataMap = new Map<string, BuilderData>();

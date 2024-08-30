@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { HiFire, HiOutlineFire } from "react-icons/hi2";
 import { RiShareBoxLine } from "react-icons/ri";
-import { getBuildersGitHubActivities } from "~~/components/github-activities/data-fetches";
+import { getBuildersGitHubActivities } from "~~/components/github-activities/dataFetches";
 import { Address } from "~~/components/scaffold-eth";
 
 const BuildersActivities = async () => {
