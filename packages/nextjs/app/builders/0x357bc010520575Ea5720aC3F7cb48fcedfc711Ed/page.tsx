@@ -1,15 +1,19 @@
 "use client";
 
 import React from "react";
-import { BriefcaseIcon, CodeBracketIcon } from "@heroicons/react/20/solid";
 import { NextPage } from "next";
+import { BriefcaseIcon, CodeBracketIcon } from "@heroicons/react/20/solid";
 
 const handleClick1 = () => {
   window.open("https://github.com/Selpak99", "_blank", "noopener,noreferrer");
 };
 
 const handleClick2 = () => {
-  window.open("https://app.buidlguidl.com/builders/0x357bc010520575Ea5720aC3F7cb48fcedfc711Ed", "_blank", "noopener,noreferrer");
+  window.open(
+    "https://app.buidlguidl.com/builders/0x357bc010520575Ea5720aC3F7cb48fcedfc711Ed",
+    "_blank",
+    "noopener,noreferrer",
+  );
 };
 
 const Page: NextPage = () => {
@@ -34,18 +38,25 @@ const Page: NextPage = () => {
           <h2 className="text-2xl font-bold text-center mb-4">About Me</h2>
           <div className="max-w-xl mx-auto">
             <p className="text-center text-lg mb-4">
-              I&apos;m new to the blockchain space and have been diving into various resources to build my knowledge. I&apos;m excited to continue growing and contributing to this field.
+              I&apos;m new to the blockchain space and have been diving into various resources to build my knowledge.
+              I&apos;m excited to continue growing and contributing to this field.
             </p>
           </div>
         </div>
 
         <div className="flex-grow w-full mt-16">
           <div className="flex justify-center items-center gap-8 flex-col sm:flex-row">
-            <button className="flex flex-col bg-base-100 px-6 py-6 text-center items-center max-w-xs rounded-3xl" onClick={handleClick1}>
+            <button
+              className="flex flex-col bg-base-100 px-6 py-6 text-center items-center max-w-xs rounded-3xl"
+              onClick={handleClick1}
+            >
               <CodeBracketIcon className="h-8 w-8 fill-secondary" />
               Github
             </button>
-            <button className="flex flex-col bg-base-100 px-6 py-6 text-center items-center max-w-xs rounded-3xl" onClick={handleClick2}>
+            <button
+              className="flex flex-col bg-base-100 px-6 py-6 text-center items-center max-w-xs rounded-3xl"
+              onClick={handleClick2}
+            >
               <BriefcaseIcon className="h-8 w-8 fill-secondary" />
               Buidl Guidl
             </button>
