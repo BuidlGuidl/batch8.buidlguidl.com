@@ -1,5 +1,4 @@
 import Image from "next/image";
-import nightmareFoxImage from "./../../../public/builders/avatars/0xD2692F9df925D18D527ABe8b3d99EE9E9C8d75AE.jpg";
 import SkillComponent from "./_components/SkillComponent";
 import { NextPage } from "next";
 import { SiBootstrap, SiExpress, SiJavascript, SiNodedotjs, SiReact, SiTailwindcss } from "react-icons/si";
@@ -12,12 +11,12 @@ const NightmareFox: NextPage = () => {
         <div className="flex flex-col items-center md:items-start gap-6">
           <div className="rounded-full w-40 h-40 md:w-56 md:h-56 overflow-hidden border-red-500 border-2">
             <Image
-              src={nightmareFoxImage}
+              src={"/builders/avatars/0xD2692F9df925D18D527ABe8b3d99EE9E9C8d75AE.jpg"}
               alt="NightmareFox Profile"
               width={160}
               height={160}
               className="w-full h-full object-cover"
-              style={{ aspectRatio: "1 / 1", objectFit: "cover" }}
+              style={{ aspectRatio: "1/1", objectFit: "cover" }}
             />
           </div>
           <div className="space-y-2 text-center md:text-left">
